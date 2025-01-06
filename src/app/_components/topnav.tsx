@@ -8,7 +8,7 @@ export default function TopNav() {
   const router = useRouter();
 
   return (
-    <nav className="flex w-full items-center justify-between border-b p-4 text-xl font-semibold">
+    <nav className="flex w-full items-center justify-between border-b px-4 pt-4 text-xl font-semibold">
       <div>Gallery</div>
 
       <div className="flex">
@@ -16,11 +16,16 @@ export default function TopNav() {
           <SignInButton>Sign In </SignInButton>
         </SignedOut>
         <SignedIn>
-          <UploadButton
-            endpoint="imageUploader"
-            onClientUploadComplete={() => router.refresh()}
-          />
-          <UserButton />
+          <div className="flex min-w-48 justify-between">
+            <UploadButton
+              className="me-4 mt-4"
+              endpoint="imageUploader"
+              onClientUploadComplete={() => router.refresh()}
+            />
+            <div className="min-w-8 self-center">
+              <UserButton />
+            </div>
+          </div>
         </SignedIn>
       </div>
     </nav>
