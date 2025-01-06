@@ -22,7 +22,7 @@ export default function TopNav() {
               endpoint="imageUploader"
               onClientUploadComplete={() => router.refresh()}
             />
-            <div className="min-w-8 self-center">
+            <div className="ms-auto min-w-7 self-center">
               <UserButton />
             </div>
           </div>
