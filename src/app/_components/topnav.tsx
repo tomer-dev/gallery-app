@@ -8,7 +8,7 @@ export default function TopNav() {
   const router = useRouter();
 
   return (
-    <nav className="flex w-full items-center justify-between border-b px-4 pt-4 text-xl font-semibold">
+    <nav className="flex h-20 w-full items-center justify-between border-b p-4 text-xl font-semibold">
       <div>Gallery</div>
 
       <div className="flex">
@@ -18,7 +18,7 @@ export default function TopNav() {
         <SignedIn>
           <div className="flex min-w-48 justify-between">
             <UploadButton
-              className="me-4 mt-4"
+              className="-mb-4 me-4 text-lg"
               endpoint="imageUploader"
               onClientUploadComplete={() => router.refresh()}
             />

@@ -1,9 +1,7 @@
-import { db } from "~/server/db";
+import { getMyCarnivalImages } from "~/server/db/queries";
 
 export async function CarnivalImages() {
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.id),
-  });
+  const images = await getMyCarnivalImages();
 
   return (
     <div className="flex flex-wrap gap-4">
