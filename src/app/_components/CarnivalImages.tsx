@@ -13,10 +13,9 @@ export async function CarnivalImages() {
         >
           <Image
             src={image.url}
-            objectFit="fill"
             alt={image.name}
             width={192}
-            height={128}
+            height={192}
             style={{ objectFit: "fill" }}
           />
           <div className="mx-auto">{image.name}</div>
