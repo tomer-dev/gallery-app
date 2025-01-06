@@ -1,20 +1,18 @@
-import { db } from "~/server/db";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+
+import { CarnivalImages } from "./_components/CarnivalImages";
 
 export default async function HomePage() {
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.id),
-  });
-
   return (
     <main className="">
-      <div className="flex flex-wrap gap-4">
-        {images.map((image) => (
-          <div key={image.id} className="flex w-48 flex-col">
-            <img src={image.url} className="h-32 w-48" />
-            <div className="mx-auto">{image.name}</div>
-          </div>
-        ))}
-      </div>
+      <SignedOut>
+        <div className="text-2x1 h-full w-full text-center">
+          Please sign in above
+        </div>
+      </SignedOut>
+      <SignedIn>
+        <CarnivalImages />
+      </SignedIn>
     </main>
   );
 }
