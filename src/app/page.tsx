@@ -4,7 +4,7 @@ import { CarnivalImages } from "./_components/CarnivalImages";
 
 export default async function HomePage() {
   return (
-    <main className="">
+    <div className="flex flex-wrap justify-center gap-4 p-4">
       <SignedOut>
         <div className="text-2x1 h-full w-full text-center">
           Please sign in above
@@ -13,6 +13,6 @@ export default async function HomePage() {
       <SignedIn>
         <CarnivalImages />
       </SignedIn>
-    </main>
+    </div>
   );
 }
