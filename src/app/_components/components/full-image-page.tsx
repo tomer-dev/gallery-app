@@ -5,5 +5,15 @@ import { getImage } from "~/server/db/queries";
 export default async function FullPageImageView(props: { id: number }) {
   const image = await getImage(props.id);
 
-  return <Image src={image.url} width={256} height={256} alt={image.name} />;
+  return (
+    <div className="flex h-full w-full min-w-0">
+      <div className="flex flex-shrink items-center justify-center">
+        <img src={image.url} className="object-contain" alt={image.name} />
+      </div>
+
+      <div className="w-48 flex-shrink-0 flex-col border-l">
+        <div className="text-xl font-bold">{image.name}</div>
+      </div>
+    </div>
+  );
 }
