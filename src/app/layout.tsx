@@ -1,8 +1,8 @@
-import "@uploadthing/react/styles.css";
+import React from "react";
+import { type Metadata } from "next";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import { GeistSans } from "geist/font/sans";
-import { type Metadata } from "next";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 
@@ -10,6 +10,7 @@ import { ourFileRouter } from "~/app/api/uploadthing/core";
 
 import TopNav from "./_components/topnav";
 
+import "@uploadthing/react/styles.css";
 import "~/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -20,7 +21,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  modal,
+}: {
+  children: React.ReactNode;
+  modal: React.ReactNode;
+}) {
   return (
     <ClerkProvider>
       <html lang="en" className={`${GeistSans.variable}`}>
@@ -28,6 +33,8 @@ export default function RootLayout({
         <body className="flex flex-col gap-4">
           <TopNav />
           {children}
+          {modal}
+          <div id="modal-root" />
         </body>
       </html>
     </ClerkProvider>
