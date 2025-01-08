@@ -12,6 +12,7 @@ import TopNav from "./_components/topnav";
 
 import "@uploadthing/react/styles.css";
 import "~/styles/globals.css";
+import { Toaster } from "~/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "T3 Gallery",
@@ -37,6 +38,7 @@ export default function RootLayout({
           </div>
           {modal}
           <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
