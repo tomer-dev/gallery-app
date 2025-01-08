@@ -5,6 +5,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { GeistSans } from "geist/font/sans";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
+import { Toaster } from "~/components/ui/sonner";
+import { CSPostHogProvider } from "./_analytics/provider";
 
 import { ourFileRouter } from "~/app/api/uploadthing/core";
 
@@ -12,7 +14,7 @@ import TopNav from "./_components/topnav";
 
 import "@uploadthing/react/styles.css";
 import "~/styles/globals.css";
-import { Toaster } from "~/components/ui/sonner";
+import posthog from "posthog-js";
 
 export const metadata: Metadata = {
   title: "T3 Gallery",
@@ -29,18 +31,20 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" className={`${GeistSans.variable}`}>
-        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-        <body className="dark">
-          <div className="grid h-screen grid-rows-[auto,1fr]">
-            <TopNav />
-            <main className="overflow-y-scroll">{children}</main>
-          </div>
-          {modal}
-          <div id="modal-root" />
-          <Toaster />
-        </body>
-      </html>
+      <CSPostHogProvider>
+        <html lang="en" className={`${GeistSans.variable}`}>
+          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+          <body className="dark">
+            <div className="grid h-screen grid-rows-[auto,1fr]">
+              <TopNav />
+              <main className="overflow-y-scroll">{children}</main>
+            </div>
+            {modal}
+            <div id="modal-root" />
+            <Toaster />
+          </body>
+        </html>
+      </CSPostHogProvider>
     </ClerkProvider>
   );
 }
