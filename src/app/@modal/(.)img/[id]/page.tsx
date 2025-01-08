@@ -1,7 +1,3 @@
-import Image from "next/image";
-
-import { getImage } from "~/server/db/queries";
-
 import { Modal } from "./modal";
 import FullPageImageView from "~/app/_components/components/full-image-page";
 
