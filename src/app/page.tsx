@@ -2,6 +2,8 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 import { CarnivalImages } from "./_components/CarnivalImages";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   return (
     <div className="flex flex-wrap justify-center gap-4 p-4">
