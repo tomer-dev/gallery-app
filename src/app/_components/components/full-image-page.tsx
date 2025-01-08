@@ -7,6 +7,8 @@ import { deleteImage, getImage } from "~/server/db/queries";
 export default async function FullPageImageView(props: { id: number }) {
   const image = await getImage(props.id);
 
+  console.log("found", image);
+
   const uploaderInfo = await clerkClient().then((client) =>
     client.users.getUser(image.userId),
   );
