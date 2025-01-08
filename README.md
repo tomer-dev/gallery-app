@@ -16,6 +16,5 @@
 - [x] Design upload button
 - [x] Add Shadcn UI, include toast
 - [x] Analytics (posthog)
-- [ ] Delete button (w/ Server Actions)
+- [x] Delete button (w/ Server Actions)
 - [ ] Ratelimiting (upstash)
--
