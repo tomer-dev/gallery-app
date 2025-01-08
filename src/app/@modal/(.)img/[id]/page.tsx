@@ -6,6 +6,7 @@ export default async function PhotoModal({
 }: {
   params: { id: string };
 }) {
+  // @eslint-ignore-next-line
   const { id } = await params;
 
   const idAsNumber = Number(id);

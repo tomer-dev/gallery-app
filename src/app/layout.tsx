@@ -14,7 +14,6 @@ import TopNav from "./_components/topnav";
 
 import "@uploadthing/react/styles.css";
 import "~/styles/globals.css";
-import posthog from "posthog-js";
 
 export const metadata: Metadata = {
   title: "T3 Gallery",

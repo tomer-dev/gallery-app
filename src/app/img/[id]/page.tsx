@@ -5,6 +5,7 @@ export default async function PhotoPage({
 }: {
   params: { id: string };
 }) {
+  // @eslint-ignore-next-line
   const { id } = await params;
 
   const idAsNumber = Number(id);

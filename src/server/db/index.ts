@@ -1,5 +1,5 @@
 import { drizzle } from "drizzle-orm/neon-http";
-import { neon, NeonQueryFunction } from "@neondatabase/serverless";
+import { neon, type NeonQueryFunction } from "@neondatabase/serverless";
 
 import { env } from "~/env";
 import * as schema from "./schema";

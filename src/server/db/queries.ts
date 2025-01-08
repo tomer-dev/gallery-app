@@ -8,7 +8,6 @@ import { images } from "./schema";
 
 import { redirect } from "next/navigation";
 import analyticsServerClient from "../analytics";
-import { revalidatePath } from "next/cache";
 
 export async function getMyCarnivalImages() {
   const user = await auth();
