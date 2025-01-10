@@ -1,0 +1,23 @@
+name: CI
+run-name: CI run to check for ESLint and TS errors
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        name: "Install pnpm"
+        with:
+          version: 10
+          run_install: false
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+      - name: "Install Modules"
+        run: pnpm install --frozen-lockfile --strict-peer-dependencies
+      - name: "Run ESLint"
+        run: pnpm eslint . --ext .js,.jsx,.ts,.tsx
+      - run: echo "This job's status is ${{ job.status }}."
