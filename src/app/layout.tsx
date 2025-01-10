@@ -16,8 +16,8 @@ import "@uploadthing/react/styles.css";
 import "~/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "T3 Gallery",
-  description: "End-to-end simple gallery application based on Create-T3-App",
+  title: "Gallery App",
+  description: "End-to-end simple gallery application",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 

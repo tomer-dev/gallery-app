@@ -1,15 +1,16 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 import { CarnivalImages } from "./_components/CarnivalImages";
-
+import Welcome from "../markdown/Welcome.mdx";
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   return (
-    <div className="flex justify-center">
+    <>
       <SignedOut>
-        <div className="h-full w-full p-4 text-center text-2xl">
+        <div className="flex h-full w-full flex-col justify-between pt-4 text-center text-2xl">
           Please sign in above
+          <Welcome />
         </div>
       </SignedOut>
 
@@ -18,6 +19,6 @@ export default async function HomePage() {
           <CarnivalImages />
         </div>
       </SignedIn>
-    </div>
+    </>
   );
 }

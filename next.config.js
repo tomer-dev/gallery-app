@@ -1,3 +1,5 @@
+import createMDX from "@next/mdx";
+
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
@@ -7,6 +9,8 @@ import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import("next").NextConfig} */
 const coreCnfig = {
+  // Configure `pageExtensions` to include markdown and MDX files
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     remotePatterns: [{ hostname: "utfs.io" }],
   },
@@ -35,8 +39,6 @@ const posthogConfig = {
   // This is required to support PostHog trailing slash API requests
   skipTrailingSlashRedirect: true,
 };
-
-const config = { ...posthogConfig, ...coreCnfig };
 
 const sentryConfig = {
   // For all available options, see:
@@ -77,5 +79,9 @@ const sentryConfig = {
   // https://vercel.com/docs/cron-jobs
   automaticVercelMonitors: true,
 };
+
+const withMDX = createMDX({});
+
+const config = { ...posthogConfig, ...withMDX(coreCnfig) };
 
 export default withSentryConfig(config, sentryConfig);
