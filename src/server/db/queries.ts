@@ -9,7 +9,7 @@ import { images } from "./schema";
 import { redirect } from "next/navigation";
 import analyticsServerClient from "../analytics";
 
-export async function getMyCarnivalImages() {
+export async function getMyImages() {
   const user = await auth();
 
   if (!user.userId) throw new Error("Unauthorized");

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getMyCarnivalImages } from "~/server/db/queries";
+import { getMyImages } from "~/server/db/queries";
 
-export async function CarnivalImages() {
-  const images = await getMyCarnivalImages();
+export async function Images() {
+  const images = await getMyImages();
 
   return images.map((image) => (
     <div
