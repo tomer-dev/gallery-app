@@ -9,6 +9,8 @@
 - CI Github Actions running ESLint
 - CD to Vercel
 
+<img width="491" alt="Screenshot 2025-01-11 at 19 41 00" src="https://github.com/user-attachments/assets/232bab5a-08cf-40f5-b6b9-aed9eb733752" />
+
 ## Steps (TODOs)
 
 - [x] Make it deploy (vercel)
