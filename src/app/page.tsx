@@ -1,7 +1,8 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 
-import { Images } from "./_components/Images";
-import Welcome from "../markdown/Welcome.mdx";
+import Images from "./_components/images";
+import Welcome from "./_components/components/welcome-page";
+
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {

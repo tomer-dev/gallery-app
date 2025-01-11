@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getMyImages } from "~/server/db/queries";
 
-export async function Images() {
+export default async function Images() {
   const images = await getMyImages();
 
   return images.map((image) => (

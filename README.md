@@ -1,6 +1,15 @@
-# Gallery App
+# Gallery Production app
 
-## Todo
+## Made with Next.js | Drizzle ORM | Postgress 🚀
+
+- Authentication - showing pictures by user (Clerk)
+- Error management - Sentry (equivalent of LogRocket)
+- Analytics (Posthog) and Ratelimiting (Upstash)
+- Delete buttton with Server Actions
+- CI Github Actions running ESLint
+- CD to Vercel
+
+## Steps (TODOs)
 
 - [x] Make it deploy (vercel)
 - [x] Scaffold basic ui with mock data
@@ -20,5 +29,7 @@
 - [x] Add Welcome MDX
 - [x] Add Github Actions CI
 - [x] Cache node_modules and PNPM
+- [x] MDX Welcome page and README
+- [x] Tidy up components
 - [ ] Add return button
 - [ ] Portrait photos case

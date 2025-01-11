@@ -34,7 +34,7 @@ dialog:modal {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --footer: 204 68%, 91%;
+    --welcome-background: 204 68%, 91%;
   }
   .dark {
     --background: 222.2 84% 4.9%;
@@ -61,7 +61,7 @@ dialog:modal {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --footer: 204 68%, 91%;
+    --welcome-background: 204 68%, 40%;
   }
 }
 
@@ -71,6 +71,35 @@ dialog:modal {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* https://css-tricks.com/how-to-create-wavy-shapes-patterns-in-css/ */
+  .wavy-background {
+    --size: 80px;
+    --m: 2;
+    --p: calc(var(--m) * var(--size));
+    --R: calc(var(--size) * sqrt(var(--m) * var(--m) + 1));
+
+    padding: 6rem 0 3rem;
+
+    background-color: hsl(var(--welcome-background));
+    mask:
+      radial-gradient(
+          var(--R) at 50% calc(var(--size) / 2 + var(--p)),
+          #000 99%,
+          #0000 101%
+        )
+        calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
+      radial-gradient(var(--R) at 50% calc(-1 * var(--p)), #0000 99%, #000 101%)
+        50% calc(var(--size) / 2) / calc(4 * var(--size)) 100% repeat-x;
+  }
+  @media screen and (max-width: 1024px) {
+    .wavy-background {
+      --size: 30px;
+      padding: 4rem 0 2rem;
+    }
   }
 }
 
