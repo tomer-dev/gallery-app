@@ -34,4 +34,4 @@
 - [x] MDX Welcome page and README
 - [x] Tidy up components
 - [x] Add return button
-- [ ] Portrait photos case
+- [x] Portrait photos case
