@@ -33,5 +33,5 @@
 - [x] Cache node_modules and PNPM
 - [x] MDX Welcome page and README
 - [x] Tidy up components
-- [ ] Add return button
+- [x] Add return button
 - [ ] Portrait photos case

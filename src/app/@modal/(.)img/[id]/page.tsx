@@ -1,5 +1,8 @@
+import Link from "next/link";
+
 import { Modal } from "./modal";
 import FullPageImageView from "~/app/_components/components/full-image-page";
+import CloseIcon from "~/app/_components/svg/close-icon";
 
 export default async function PhotoModal({
   params,
@@ -16,6 +19,9 @@ export default async function PhotoModal({
   return (
     <Modal>
       <FullPageImageView id={idAsNumber} />
+      <Link href="/" className="absolute left-4 top-3 p-2">
+        <CloseIcon />
+      </Link>
     </Modal>
   );
 }

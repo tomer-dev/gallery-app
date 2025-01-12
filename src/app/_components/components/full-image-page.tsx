@@ -20,7 +20,7 @@ export default async function FullPageImageView(props: { id: number }) {
       </div>
 
       <div className="w-48 flex-shrink-0 flex-col border-l">
-        <div className="border-b p-2 text-center text-lg">{image.name}</div>
+        <div className="border-b p-4 text-center text-lg">{image.name}</div>
 
         <div className="p-2">
           <span>Uploaded By:</span>

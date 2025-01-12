@@ -4,8 +4,8 @@ import { useUploadThing } from "~/utils/uploadthing";
 import { toast } from "sonner";
 import { usePostHog } from "posthog-js/react";
 
-import LoadingSpinnerIcon from "./svg/LoadingSpinnerIcon";
-import UploadIcon from "./svg/UploadIcon";
+import LoadingSpinnerIcon from "./svg/loading-spinner-icon";
+import UploadIcon from "./svg/upload-icon";
 
 // inferred input off useUploadThing
 type Input = Parameters<typeof useUploadThing>;
