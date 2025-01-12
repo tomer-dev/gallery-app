@@ -14,13 +14,15 @@ export default async function FullPageImageView(props: { id: number }) {
   );
 
   return (
-    <div className="flex h-full w-full min-w-full">
+    <div className="flex h-full w-full min-w-full max-md:flex-col">
       <div className="flex flex-shrink basis-full items-center justify-center">
         <img src={image.url} className="object-contain" alt={image.name} />
       </div>
 
-      <div className="w-48 flex-shrink-0 flex-col border-l">
-        <div className="border-b p-4 text-center text-lg">{image.name}</div>
+      <div className="w-48 flex-shrink-0 flex-col border-l max-md:w-full max-md:text-center">
+        <div className="truncate border-b px-2 py-4 text-center text-lg">
+          {image.name}
+        </div>
 
         <div className="p-2">
           <span>Uploaded By:</span>

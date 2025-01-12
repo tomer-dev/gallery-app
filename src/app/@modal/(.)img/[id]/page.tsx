@@ -19,7 +19,10 @@ export default async function PhotoModal({
   return (
     <Modal>
       <FullPageImageView id={idAsNumber} />
-      <Link href="/" className="absolute left-4 top-3 p-2">
+      <Link
+        href="/"
+        className="absolute left-4 top-3 rounded-xl bg-black/90 p-2"
+      >
         <CloseIcon />
       </Link>
     </Modal>
