@@ -10,6 +10,7 @@
 - CD to Vercel
 
 ### [Try it here](https://auth-gallery.vercel.app/)
+Or locally: `pnpm install` then `pnpm run dev` 
 
 <img width="583" alt="Screenshot 2025-01-12 at 16 52 46" src="https://github.com/user-attachments/assets/dd050be8-6fe2-4239-8c1b-d29f5eb60e52" />
 
